@@ -79,11 +79,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Projects\PruebaXML\Template.Models\Template.Models.csproj">
-      <Project>{0BFD797A-87EE-441D-BF8A-357E46ED283B}</Project>
-      <Name>Template.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

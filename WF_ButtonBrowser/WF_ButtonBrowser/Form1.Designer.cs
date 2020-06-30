@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.GBox_Xml = new System.Windows.Forms.GroupBox();
-            this.Txt_File = new System.Windows.Forms.TextBox();
-            this.Btn_Browser = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.Lbl_File = new System.Windows.Forms.Label();
             this.Btn_Upload = new System.Windows.Forms.Button();
+            this.Lbl_File = new System.Windows.Forms.Label();
+            this.Btn_Browser = new System.Windows.Forms.Button();
+            this.Txt_File = new System.Windows.Forms.TextBox();
             this.GBox_Xml.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,12 +49,24 @@
             this.GBox_Xml.TabStop = false;
             this.GBox_Xml.Text = "Upload XML";
             // 
-            // Txt_File
+            // Btn_Upload
             // 
-            this.Txt_File.Location = new System.Drawing.Point(6, 38);
-            this.Txt_File.Name = "Txt_File";
-            this.Txt_File.Size = new System.Drawing.Size(308, 20);
-            this.Txt_File.TabIndex = 0;
+            this.Btn_Upload.Location = new System.Drawing.Point(239, 64);
+            this.Btn_Upload.Name = "Btn_Upload";
+            this.Btn_Upload.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Upload.TabIndex = 2;
+            this.Btn_Upload.Text = "Upload";
+            this.Btn_Upload.UseVisualStyleBackColor = true;
+            this.Btn_Upload.Click += new System.EventHandler(this.Btn_Upload_Click);
+            // 
+            // Lbl_File
+            // 
+            this.Lbl_File.AutoSize = true;
+            this.Lbl_File.Location = new System.Drawing.Point(6, 22);
+            this.Lbl_File.Name = "Lbl_File";
+            this.Lbl_File.Size = new System.Drawing.Size(26, 13);
+            this.Lbl_File.TabIndex = 1;
+            this.Lbl_File.Text = "File:";
             // 
             // Btn_Browser
             // 
@@ -67,28 +78,12 @@
             this.Btn_Browser.UseVisualStyleBackColor = true;
             this.Btn_Browser.Click += new System.EventHandler(this.Btn_Browser_Click);
             // 
-            // openFileDialog1
+            // Txt_File
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // Lbl_File
-            // 
-            this.Lbl_File.AutoSize = true;
-            this.Lbl_File.Location = new System.Drawing.Point(6, 22);
-            this.Lbl_File.Name = "Lbl_File";
-            this.Lbl_File.Size = new System.Drawing.Size(26, 13);
-            this.Lbl_File.TabIndex = 1;
-            this.Lbl_File.Text = "File:";
-            // 
-            // Btn_Upload
-            // 
-            this.Btn_Upload.Location = new System.Drawing.Point(239, 64);
-            this.Btn_Upload.Name = "Btn_Upload";
-            this.Btn_Upload.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Upload.TabIndex = 2;
-            this.Btn_Upload.Text = "Upload";
-            this.Btn_Upload.UseVisualStyleBackColor = true;
-            this.Btn_Upload.Click += new System.EventHandler(this.Btn_Upload_Click);
+            this.Txt_File.Location = new System.Drawing.Point(6, 38);
+            this.Txt_File.Name = "Txt_File";
+            this.Txt_File.Size = new System.Drawing.Size(308, 20);
+            this.Txt_File.TabIndex = 0;
             // 
             // Form1
             // 
@@ -109,7 +104,6 @@
         private System.Windows.Forms.GroupBox GBox_Xml;
         private System.Windows.Forms.Button Btn_Browser;
         private System.Windows.Forms.TextBox Txt_File;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label Lbl_File;
         private System.Windows.Forms.Button Btn_Upload;
     }

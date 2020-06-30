@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
-using System.Xml;
-using Template.Models;
 
 namespace WF_ButtonBrowser
 {
     public partial class Form1 : Form
     {
-        private XmlTextReader XmlTextReader_;
-
-        private List<Client> ListClients_;
         public Form1()
         {
             InitializeComponent();
@@ -18,10 +13,24 @@ namespace WF_ButtonBrowser
 
         private void Btn_Browser_Click(object sender, EventArgs e)
         {
-            DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
-            if (result == DialogResult.OK) // Test result.
+            try
             {
-                Txt_File.Text = openFileDialog1.FileName;
+                var ChooseXml = new OpenFileDialog();
+                var ChoseXmlResult_ = ChooseXml.ShowDialog(); // Show the dialog.
+                ChooseXml.Filter = "XML Files (*.xml)|*.xml";
+                ChooseXml.DefaultExt = "xml";
+                ChooseXml.Multiselect = false;
+                if (ChoseXmlResult_ == DialogResult.OK) // Test result.
+                {
+                    var ext = Path.GetExtension(ChooseXml.FileName);
+                    if (!String.Equals(ext, ".xml", StringComparison.OrdinalIgnoreCase)) throw new Exception("Type of the selected file isn't supported.");
+                    Txt_File.Text = ChooseXml.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Txt_File.Text = "";
             }
         }
 
